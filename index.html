@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>syofuyu · AI Automation Studio</title>
+<meta name="description" content="I build content, data, and video pipelines that run while you sleep. Python + LLM APIs + ffmpeg + cron, delivered with docs." />
+<style>
+:root{
+	--bg:#13161d; --panel:#1a1e27; --line:#2a3040; --ink:#e8eaf0; --soft:#9aa3b5;
+	--amber:#e0750f; --teal:#38b2ac; --mono:ui-monospace,"JetBrains Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+a{color:var(--teal);text-decoration:none} a:hover{color:var(--amber)}
+h1,h2,h3{line-height:1.2;margin:0 0 .4em;font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin:0 0 .8em}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.brand{font-family:var(--mono);font-size:.95rem;color:var(--ink)}
+.brand b{color:var(--amber)}
+nav a{font-family:var(--mono);font-size:.8rem;color:var(--soft);margin-left:18px}
+nav a:hover{color:var(--amber)}
+.hero{padding:84px 0 56px}
+.hero h1{font-size:clamp(1.9rem,4.5vw,3rem);letter-spacing:-.01em;max-width:22ch}
+.hero h1 .hl{color:var(--amber)}
+.hero p{color:var(--soft);font-size:1.1rem;max-width:52ch}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.stat{border:1px solid var(--line);background:var(--panel);padding:16px 18px;border-radius:10px}
+.stat b{display:block;font-size:1.5rem;color:var(--amber);font-family:var(--mono)}
+.stat span{color:var(--soft);font-size:.85rem}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:1.45rem}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px}
+.card h3{font-size:1.05rem;margin-bottom:.2em}
+.card p{color:var(--soft);font-size:.92rem;margin:0}
+.card .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:10px}
+.case{border-left:3px solid var(--amber)}
+.case ul{margin:.6em 0 0;padding-left:18px;color:var(--soft);font-size:.9rem}
+.stack{font-family:var(--mono);font-size:.85rem;color:var(--soft);line-height:2}
+.stack i{color:var(--amber);font-style:normal}
+ol.process{list-style:none;counter-reset:p;padding:0}
+ol.process li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+ol.process li::before{content:counter(p,decimal-leading-zero);font-family:var(--mono);color:var(--amber);font-size:.9rem}
+ol.process b{display:block;margin-bottom:.2em}
+ol.process p{color:var(--soft);font-size:.92rem;margin:0}
+.cta{background:var(--panel);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
+.cta h2{margin-bottom:.2em}
+.cta p{color:var(--soft)}
+.cta .btn{display:inline-block;margin-top:14px;background:var(--amber);color:#13161d;font-weight:700;padding:12px 26px;border-radius:8px}
+.cta .btn:hover{background:var(--ink)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--soft);font-size:.85rem;font-family:var(--mono)}
+</style>
+</head>
+<body>
+
+<header>
+	<div class="wrap">
+		<div class="brand">syofuyu<b>.io</b> — automation studio</div>
+		<nav>
+			<a href="#services">Services</a><a href="#cases">Cases</a><a href="#contact">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<div class="hero wrap">
+	<p class="eyebrow">python · llm apis · ffmpeg · cron</p>
+	<h1>I build pipelines that <span class="hl">run while you sleep</span>.</h1>
+	<p>Content factories, scraping systems, faceless-video production lines, and the static infrastructure behind them — designed, built, documented, and handed over to you.</p>
+	<div class="stats">
+		<div class="stat"><b>3-5×</b><span>content output per week, same hours</span></div>
+		<div class="stat"><b>&lt;$50</b><span>typical monthly running cost of my builds</span></div>
+		<div class="stat"><b>100%</b><span>documented handover, no black boxes</span></div>
+	</div>
+</div>
+
+<section id="services" class="wrap">
+	<p class="eyebrow">services</p>
+	<h2>What I build</h2>
+	<div class="grid g2" style="margin-top:18px">
+		<div class="card"><span class="mono">01 · content systems</span>
+			<h3>Automated content pipelines</h3>
+			<p>Trend discovery → LLM drafting → QA gates → publishing. Weekly output of drafts with human-review checkpoints, so you approve instead of writing.</p></div>
+		<div class="card"><span class="mono">02 · data & scraping</span>
+			<h3>Scraping & monitoring systems</h3>
+			<p>Scheduled scrapers with retries, diffing, and clean JSON/markdown output — feeds for sites, dashboards, or alerts.</p></div>
+		<div class="card"><span class="mono">03 · video automation</span>
+			<h3>Faceless video production lines</h3>
+			<p>Script → TTS narration → overlay rendering → MP4, via ffmpeg. Vertical shorts or long-form, batch-rendered overnight.</p></div>
+		<div class="card"><span class="mono">04 · web infrastructure</span>
+			<h3>Static sites & publishing infra</h3>
+			<p>Astro/Cloudflare builds with affiliate link management, SEO structure, and git-push deploys. Fast, near-zero hosting cost.</p></div>
+	</div>
+</section>
+
+<section id="cases" class="wrap">
+	<p class="eyebrow">case studies · personal infrastructure</p>
+	<h2>Running systems I built end-to-end</h2>
+	<div class="grid g3" style="margin-top:18px">
+		<div class="card case"><span class="mono">content factory</span>
+			<h3>Trend-to-publish pipeline</h3>
+			<ul>
+				<li>Multipoint trend scraping → LLM drafts with anti-hallucination rules → markdown content collection</li>
+				<li>30-page static site builds in under 2 minutes</li>
+				<li>Zero marginal cost per article</li>
+			</ul></div>
+		<div class="card case"><span class="mono">video line</span>
+			<h3>Faceless short-video renderer</h3>
+			<ul>
+				<li>Topic → script → neural TTS → Pillow/ffmpeg overlay compositing</li>
+				<li>1080×1920 clips assembled headlessly, no editor required</li>
+				<li>One command from idea to upload-ready MP4</li>
+			</ul></div>
+		<div class="card case"><span class="mono">link infra</span>
+			<h3>Affiliate link management</h3>
+			<ul>
+				<li>Central registry + /go/ redirect layer</li>
+				<li>Swap any partner program without touching content pages</li>
+				<li>Disclosure and noindex handling built in</li>
+			</ul></div>
+	</div>
+</section>
+
+<section class="wrap">
+	<p class="eyebrow">stack & process</p>
+	<div class="grid g2" style="margin-top:18px">
+		<div class="card">
+			<h3>Stack</h3>
+			<p class="stack"><i>Python</i> · scraping & pipelines &nbsp;|&nbsp; <i>LLM APIs</i> · GLM / OpenAI-compatible<br>
+			<i>ffmpeg + Pillow</i> · rendering &nbsp;|&nbsp; <i>Astro + Cloudflare Pages</i> · publishing<br>
+			<i>git + cron</i> · delivery &amp; scheduling &nbsp;|&nbsp; <i>bash/macOS</i> · environment glue</p>
+		</div>
+		<div>
+			<h3>How we work</h3>
+			<ol class="process">
+				<li><b>Audit call & spec</b><p>You describe the workflow; I return a written spec with scope, timeline, and fixed price. No hourly ambiguity.</p></li>
+				<li><b>Build & demo</b><p>I build in stages, demo each stage with real data, and adjust before locking in.</p></li>
+				<li><b>Handover</b><p>Documented code, a run-book, and a walkthrough recording. You own everything.</p></li>
+			</ol>
+		</div>
+	</div>
+</section>
+
+<section id="contact" class="wrap">
+	<div class="cta">
+		<h2>Have a workflow that should run itself?</h2>
+		<p>Tell me what eats your hours. I'll tell you straight whether it can be automated — and what it takes.</p>
+		<a class="btn" href="mailto:syofuyu@proton.me">Start a conversation →</a>
+		<p style="margin-top:10px;font-family:var(--mono);font-size:.78rem">email · reply within 24h</p>
+	</div>
+</section>
+
+<footer>
+	<div class="wrap">© 2026 syofuyu automation studio · systems delivered documented · <a href="mailto:syofuyu@proton.me">contact</a></div>
+</footer>
+
+</body>
+</html>
